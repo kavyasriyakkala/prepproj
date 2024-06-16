@@ -1,10 +1,20 @@
-import { useState } from 'react'
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './components/navbar'
+import Home from './pages/home'
+import Aboutus from './pages/aboutus'
+import Mater from './pages/mater'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div><p>Hello world</p></div>
+    <BrowserRouter>
+    <Navbar/>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/aboutus' element={<Aboutus/>}/>
+      <Route path='/matter' element={<Mater/>}/>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
